@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.7.1;
 
 import "../interfaces/IBlockRewardHbbft.sol";
 import "../interfaces/IRandomHbbft.sol";
@@ -89,7 +89,7 @@ contract BlockRewardHbbftBase is UpgradeableOwned, IBlockRewardHbbft {
     // =============================================== Setters ========================================================
 
     /// @dev Fallback function. Prevents direct sending native coins to this contract.
-    function () payable external {
+    fallback () payable external {
         revert("BlockRewardContracts don't accept native coins!");
     }
 

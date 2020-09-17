@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.7.1;
 
 import "../interfaces/IBlockRewardHbbft.sol";
 import "../interfaces/IStakingHbbft.sol";
@@ -251,7 +251,7 @@ contract StakingHbbftBase is UpgradeableOwned, IStakingHbbft {
     // =============================================== Setters ========================================================
 
     /// @dev Fallback function. Prevents direct sending native coins to this contract.
-    function () payable external {
+    fallback ()  external {
         revert("Not payable");
     }
 
